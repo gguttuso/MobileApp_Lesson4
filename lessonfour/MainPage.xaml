@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="lessonfour.MainPage">
+
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
+    <StackLayout Margin="20,40,20,40"
+                 Padding="20,40,20,40"
+                 Orientation="Vertical">
+        <!-- Place new controls here -->
+        <Label Text="Explore Xamarin"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               TextColor="DarkSlateGray"
+               FontAttributes="Italic"
+               FontSize="22"/>
+
+        <Label TextColor="Gray"
+       FontSize="Medium">
+    <Label.FormattedText>
+        <FormattedString>
+            <Span Text="This is the coolest app to browse " />
+            <Span Text="Xamarin features"
+                  FontAttributes="Italic" />
+        </FormattedString>
+    </Label.FormattedText>
+</Label>
+
+        <Label Text="Here you can see we have a editor, where you can type multiple lines of copy."/>
+
+        <!--<Entry Placeholder="Entry" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsPassword="true" />-->
+
+        <Editor
+            Placeholder="Start Typing Here"
+                VerticalOptions="CenterAndExpand"
+                PlaceholderColor="DarkSlateBlue"
+                AutoSize="TextChanges">
+
+        </Editor>
+
+<Button Text="Click me"
+        Clicked="OnButtonClicked"
+        TextColor="DarkSlateBlue"
+        BackgroundColor="Azure"
+        BorderColor="CadetBlue"
+        BorderWidth="2"
+        CornerRadius="5"
+        WidthRequest="150"
+        HeightRequest="75" />
+
+
+         <Label Text="Below is a slider, which shows an example of data binding." />
+
+         <Label Text="ROTATION"
+               BindingContext="{x:Reference Name=slider}"
+               Rotation="{Binding Path=Value}"
+               FontAttributes="Bold"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+        <Slider x:Name="slider"
+                Maximum="360"
+                VerticalOptions="CenterAndExpand" />
+
+        <Label BindingContext="{x:Reference slider}"
+               Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
+               FontAttributes="Bold"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+    <!--<Label Text="Start"
+           HorizontalOptions="Start"
+           BackgroundColor="Gray" />
+    <Label Text="Center"
+           HorizontalOptions="Center"
+           BackgroundColor="Gray" />
+    <Label Text="End"
+           HorizontalOptions="End"
+           BackgroundColor="Gray" />
+    <Label Text="Fill"
+           HorizontalOptions="Fill"
+           BackgroundColor="Gray" />
+    <Label Text="StartAndExpand"
+           VerticalOptions="StartAndExpand"
+           BackgroundColor="Gray" />
+    <Label Text="CenterAndExpand"
+           VerticalOptions="CenterAndExpand"
+           BackgroundColor="Gray" />
+    <Label Text="EndAndExpand"
+           VerticalOptions="EndAndExpand"
+           BackgroundColor="Gray" />
+    <Label Text="FillAndExpand"
+           VerticalOptions="FillAndExpand"
+           BackgroundColor="Gray" />-->
+    </StackLayout>
+
+</ContentPage>
